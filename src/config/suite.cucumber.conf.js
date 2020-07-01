@@ -1,4 +1,7 @@
+const Env = require("../environment.json")
+
 const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 90000;
+const baseURL = `https://${Env.Domain}/`
 
 exports.config = {
   specs: [
@@ -17,7 +20,7 @@ exports.config = {
   logLevel: 'info',
   coloredLogs: true,
   screenshotPath: './test/reports/errorShots/',   // Saves a screenshot to a given path if a command fails.
-  baseUrl: 'https://web.qa.leapxpert.app/',
+  baseUrl: baseURL,
   waitforTimeout: 90000,            // Default timeout for all waitFor* commands.
   connectionRetryTimeout: 90000,    // Default timeout in milliseconds for request  if Selenium Grid doesn't send response
   connectionRetryCount: 3,          // Default request retries count
