@@ -18,7 +18,11 @@ $ npm install
 ```
 
 ## Run Test
-1. Run web automation test
+1. Config environment info (domain)
+```
+Config domain info in ./src/environment.json
+```
+2. Run web automation test
 ```
 $ npm run test
 ```
