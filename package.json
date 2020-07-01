@@ -5,8 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "node_modules/.bin/wdio ./src/config/suite.cucumber.conf.js",
-		"allure-report": "node_modules/.bin/allure generate --clean ./test/reports/allure-results && allure open",
-		"junit-report": "node_modules/.bin/junit-viewer --results=./test/reports/junit-results --save=junit-results.html && open junit-results.html"
+		"allure-report": "node_modules/.bin/allure generate --clean ./reports/allure-results && allure open"
 	},
 	"keywords": [
 		"selenium",
@@ -40,14 +39,7 @@
 		"webdriverio": "5.16.10"
 	},
 	"devDependencies": {
-		"@wdio/selenium-standalone-service": "^5.11.2",
-		"eslint": "^6.6.0",
-		"eslint-config-standard": "^14.1.0",
-		"eslint-plugin-import": "^2.7.0",
-		"eslint-plugin-node": "^10.0.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-react": "^7.16.0",
-		"eslint-plugin-standard": "^4.0.1"
+		"@wdio/selenium-standalone-service": "^5.11.2"
 	},
 	"babel": {
 		"presets": [
