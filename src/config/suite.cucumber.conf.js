@@ -2,7 +2,7 @@ const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 90000;
 
 exports.config = {
     specs: [
-        './src/features/login.feature',
+        './src/features/loginFailed.feature',
     ],
     exclude: [],
     maxInstances: 10,

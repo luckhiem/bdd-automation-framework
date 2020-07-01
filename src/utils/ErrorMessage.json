@@ -1,0 +1,5 @@
+{
+    "INVALID_USERNAME": "Username and/or password do not match. Please try again.",
+    "INVALID_COMPANY_NAME": "Company does not exist",
+    "INVALID_SERCURITY_CODE": "Incorrect OTP entered. Please try again."
+}

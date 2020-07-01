@@ -1,5 +1,6 @@
 import Page from './page';
 import ElementHandler from '../utils/ElementHandler.js';
+import ErrorMessage from '../utils/ErrorMessage.json'
 
 const companyInput = 'input[placeholder="Company"]';
 const usernameInput = 'input[placeholder="Username"]';
@@ -7,6 +8,7 @@ const passwordInput = 'input[placeholder="Password"]';
 const submitButton = "//span[contains(@class, 'Login__button')]";
 const headerImage = 'img[alt="Leap Logo"]';
 const mainContentPage = "//div[contains(@class, 'MainLayout__container')]";
+const notifyError = ".notification-container .message";
 
 class LoginPage extends Page {
   open() {
@@ -39,6 +41,25 @@ class LoginPage extends Page {
       ElementHandler.addValue(codeInput, parseInt(arrayCodes[i]))
     }
     ElementHandler.click(submitButton);
+    return this;
+  }
+
+  verifyErrorWithInvalidCompany(){
+    ElementHandler.waitForElementDisplayed(notifyError);
+    ElementHandler.verifyText(notifyError, ErrorMessage.INVALID_COMPANY_NAME);
+    return this;
+  }
+
+  verifyErrorWithInvalidUsername(){
+    ElementHandler.waitForElementDisplayed(notifyError);
+    ElementHandler.verifyText(notifyError, ErrorMessage.INVALID_USERNAME);
+    return this;
+  }
+
+
+  verifyErrorWithInvalidSercurityCode(){
+    ElementHandler.waitForElementDisplayed(notifyError);
+    ElementHandler.verifyText(notifyError, ErrorMessage.INVALID_SERCURITY_CODE);
     return this;
   }
 
